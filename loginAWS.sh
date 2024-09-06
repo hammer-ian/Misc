@@ -1,7 +1,8 @@
 #!/bin/bash
-# EC2 instance IPs change every the instance is rebooted. I've had mixed success with SSM Session Manager, the terminal formatting isn't great
-# This script retrieves the latest public IP address and logs you in
+# EC2 instance public IPs change every the instance is rebooted.
+# This script uses the AWS CLI to retrieve the latest public IP address and log you in using ssh
 # Remember to update the script with your VPC id, and .pem file details
+# Alternatives to this approach: SSM Session Manager. I've had mixed success, the terminal formatting isn't great
 
 # Check if the user provided an instance name
 if [ -z "$1" ]; then
